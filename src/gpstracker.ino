@@ -45,7 +45,7 @@ void loop()
       logFile.print(gps.speed.kmph(), 2);
       logFile.print(";");
       char sz[32];
-      sprintf(sz, "%02d.%02d.%02d;", gps.date.day(), gps.date.day(), gps.date.year());
+      sprintf(sz, "%02d.%02d.%02d;", gps.date.day(), gps.date.month(), gps.date.year());
       logFile.print(sz);
       sprintf(sz, "%02d:%02d:%02d", gps.time.hour(), gps.time.minute(), gps.time.second());
       logFile.println(sz);
@@ -55,9 +55,6 @@ void loop()
     Serial.print(gps.location.lat(), 7);
     Serial.print(";");
     Serial.print(gps.location.lng(), 7);
-  }
-  else {
-    // do nothing
   }
 }
 
